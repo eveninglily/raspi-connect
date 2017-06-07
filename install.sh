@@ -1,10 +1,16 @@
 #!/bin/bash
 
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
+
 echo "Installing Required Packages"
 # Install required packages
 apt-get update
 apt-get install hostapd dnsmasq
 
+echo "Installing Config files"
 # Interfaces file for 'hotspot mode'
 # TODO: Config address for wlan0
 cp "`dirname $0`/config/interfaces.host" /etc/network/interfaces/interfaces.host
