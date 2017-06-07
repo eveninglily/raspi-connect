@@ -21,3 +21,6 @@ sed -i 's/#DAEMON_CONF=""/DAEMON_CONF=\/etc\/hostapd\/hostapd\.conf/g' /etc/defa
 # hostapd conf file
 # TODO: Config stuff (ssid, pass, wpa type)
 cp "`dirname $0`/config/hostapd.conf" /etc/hostapd/hostapd.conf
+
+# Edit dhcpcd so wlan0 gets managed by /etc/network/interfaces
+echo "denyinterfaces wlan0" >> /etc/dhcpcd.conf
