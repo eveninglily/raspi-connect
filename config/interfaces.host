@@ -1,0 +1,13 @@
+source-directory /etc/network/interfaces.d
+
+auto lo
+iface lo inet loopback
+
+iface eth0 inet manual
+
+allow-hotplug wlan0
+
+iface wlan0 inet static
+    address 172.24.1.1
+    netmask 255.255.255.0
+    broadcast 172.24.1.255
