@@ -13,10 +13,10 @@ apt-get install hostapd dnsmasq
 echo "Installing Config files"
 # Interfaces file for 'hotspot mode'
 # TODO: Config address for wlan0
-cp "`dirname $0`/config/interfaces.host" /etc/network/interfaces/interfaces.host
+cp "`dirname $0`/config/interfaces.host" /etc/network/
 
 # Interfaces file for client mode
-cp "`dirname $0`/config/interfaces.client" /etc/network/interfaces/interfaces.client
+cp "`dirname $0`/config/interfaces.client" /etc/network/
 
 # Static config file for dnsmasq
 cp "`dirname $0`/config/dnsmasq.conf" /etc/dnsmasq.conf
