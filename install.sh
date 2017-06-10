@@ -27,3 +27,7 @@ sed -i 's/#DAEMON_CONF=""/DAEMON_CONF=\"\/etc\/hostapd\/hostapd\.conf\"/g' /etc/
 # hostapd conf file
 # TODO: Config stuff (ssid, pass, wpa type)
 cp "`dirname $0`/config/hostapd.conf" /etc/hostapd/hostapd.conf
+
+# Stop hostapd and dnsmasq from launching by default
+update-rc.d -f hostapd remove
+update-rc.d -f dnsmasq remove
