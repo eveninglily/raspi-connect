@@ -30,4 +30,4 @@ cp "`dirname $0`/config/hostapd.conf" /etc/hostapd/hostapd.conf
 
 # Stop hostapd and dnsmasq from launching by default
 update-rc.d -f hostapd remove
-update-rc.d -f dnsmasq remove
+systemctl disable dnsmasq.service
